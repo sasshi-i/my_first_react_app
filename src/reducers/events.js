@@ -1,10 +1,11 @@
+import _ from 'lodash'
 import { READ_EVENTS } from '../actions'
 
-export default (state = {}, action) => {
+export default (events = {}, action) => {
   switch(action.type) {
     case READ_EVENTS:
-      return state
+      return _.mapKeys(action.res.data, 'id')
     default:
-      return { value: state.value }
+      return events
   }
 }

@@ -7,6 +7,6 @@ const QUERYSTRING = '?token=token123'
 
 export const readEvents = () => async dispatch => {
   const res = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`)
-  dispatch({type: READ_EVENTS})
+  dispatch({type: READ_EVENTS, res})
 }
 
